@@ -1,0 +1,302 @@
+5
+
+^ If you have three apples and you buy five more apples, how many apples do you have in total?
+A) Ten
+B) Twelve
+C) Eight
+D) Six 
+Enter the ans: ^c
+^ Samantha has Twelve pencils. She gives Four pencils to her friend. How many pencils does Samantha have left?
+A) Twelve
+B) Eight
+C) ThirteenRa
+D) Nine 
+Enter the ans: ^b
+^ What is the value of 14+67×3?
+A) 215
+B) 243
+C) 200
+D) 205 
+Enter the ans: ^a
+^ Which planet is known as the "Red Planet"?
+A) Earth
+B) Jupiter
+C) Mars
+D) Venus 
+Enter the ans: ^c
+^ Which continent is the Sahara Desert located on?
+A) Asia
+B) Australia
+C) North America
+D) Africa 
+Enter the ans: ^d
+$
+6
+^ Which of the following is a renewable resource?
+A) Coal
+B) Oil
+C) Solar energy
+D) Natural gas 
+Enter the ans: ^c
+^ What is the longest river in the world?
+A) Amazon River
+B) Nile River
+C) Mississippi River
+D) Yangtze River 
+Enter the ans: ^b
+^ What is the past tense of the verb "run"?
+A) Run
+B) Running
+C) Ran
+D) Runs 
+Enter the ans: ^c
+^ What is the area of a rectangle with a length of Eight units and a width of Five units?
+A) 20 square units
+B) 30 square units
+C) 40 square units
+D) 50 square units 
+Enter the ans: ^c
+^ Who was the first President of the United States?
+A) Thomas Jefferson
+B) Abraham Lincoln
+C) George Washington
+D) John Adams 
+Enter the ans: ^c
+$
+7
+^ What is the process by which plants make their own food?
+A) Respiration
+B) Photosynthesis
+C) Digestion
+D) Transpiration
+Enter the ans: ^b
+^ Which country is the largest by land area?
+A) Canada
+B) United States
+C) China
+D) Russia
+Enter the ans: ^d
+^ Which of the following sentences is written in the passive voice?
+A) The mouse was chased by the cat.
+B) The cat chased the mouse.
+C) The cat is chasing the mouse.
+D) The cat chases the mouse.   
+Enter the ans: ^a
+^ Which document declared the American colonies' independence from Britain?
+A) The Constitution
+B) The Bill of Rights
+C) The Declaration of Independence
+D) The Articles of Confederation
+Enter the ans: ^c
+^ What is the perimeter of a rectangle with a length of Nine units and a width of Four units?
+A) 18 units
+B) 26 units
+C) 36 units
+D) 72 units
+Enter the ans: ^b
+$
+
+8
+
+^ What is the chemical symbol for Gold?
+A) Au
+B) Ag
+C) Pb
+D) Fe
+Enter the ans: ^a
+^ Which is the largest desert in the world?
+A) Sahara Desert
+B) Arabian Desert
+C) Gobi Desert
+D) Antarctic Desert
+Enter the ans: ^d
+^ Which of the following is NOT a planet in our solar system?
+A) Mercury
+B) Pluto
+C) Titan
+D) Neptune
+Enter the ans: ^c
+^ Which type of word is "quickly" in the sentence "She runs quickly"?
+A) Noun
+B) Verb
+C) Adjective
+D) Adverb
+Enter the ans: ^d
+^ If the area of a square is 64 square units, what is the length of one side of the square?
+A) Six units
+B) Seven units
+C) Eight units
+D) Ten units
+Enter the ans: ^c
+$
+
+9
+
+^ Which of the following is NOT a type of chemical bond?
+A) Ionic
+B) Covalent
+C) Metallic
+D) Electromagnetic
+Enter the ans: ^d
+^ What organelle is known as the "powerhouse" of the cell?
+A) Nucleus
+B) Ribosome
+C) Mitochondrion
+D) Endoplasmic Reticulum
+Enter the ans: ^c
+^ What is the unit of electrical resistance?
+A) Volt
+B) Ampere
+C) Ohm
+D) Watt
+Enter the ans: ^c
+^ What does the acronym "HTTP" stand for in the context of web browsers?
+A) HyperText Transfer Protocol
+B) HighText Transfer Protocol
+C) HyperTransfer Text Protocol
+D) HyperText Technical Protocol
+Enter the ans: ^a
+^ What is the area of a triangle with a base of ten units and a height of five units?
+A) 25 square units
+B) 30 square units
+C) 50 square units
+D) 75 square units
+Enter the ans: ^a
+$   
+
+10
+
+^ What is the volume of a cylinder with a radius of three units and a height of five units? Use π≈3.14.
+A) 141 cubic units
+B) 282 cubic units
+C) 452 cubic units
+D) 565 cubic units
+Enter the ans: ^b
+^ What is the chemical formula for water?
+A) CO2
+B) H2O
+C) NaCl
+D) CH4
+Enter the ans: ^b
+^ What is the capital of Canada?
+A) Toronto
+B) Vancouver
+C) Ottawa
+D) Montreal
+Enter the ans: ^c
+^ What does the acronym "USB" stand for?
+A) Universal Serial Bus
+B) Uniform Serial Bus
+C) Universal System Bus
+D) Uniform System Bus
+Enter the ans: ^a
+^ Which of the following is the primary function of the ribosomes in a cell?
+A) Energy production
+B) Protein synthesis
+C) Genetic material storage
+D) Cellular respiration
+Enter the ans: ^b
+$
+
+11
+
+^ What does SQL stand for?
+A) Structured Query Language
+B) Simple Query Language
+C) Standard Query Language
+D) System Query Language
+Enter the ans: ^a
+^ What is the area of a circle with a radius of seven units? Use π≈3.14.
+A) 49 square units
+B) 153.86 square units
+C) 100 square units
+D) 154 square units
+Enter the ans: ^b
+^ What is the unit of force in the International System of Units (SI)?
+A) Joule
+B) Watt
+C) Newton
+D) Pascal
+Enter the ans: ^c
+^ Which of the following is NOT a function of the cell membrane?
+A) Protecting the cell
+B) Controlling the movement of substances in and out of the cell
+C) Facilitating cell communication
+D) Storing genetic information
+Enter the ans: ^c
+^ What is the primary cause of global warming?
+A) Ozone depletion
+B) Greenhouse gases
+C) Deforestation
+D) Air pollution
+Enter the ans: ^b
+$
+
+12
+^ Which layer of the Earth is liquid?
+A) Crust
+B) Mantle
+C) Outer Core
+D) Inner Core
+Enter the ans: ^d
+^ What is the main greenhouse gas responsible for climate change?
+A) Methane
+B) Nitrogen
+C) Oxygen
+D) Argon
+Enter the ans: ^a
+^ Which of the following is NOT a high-level programming language?
+A) Python
+B) Java
+C) Assembly
+D) C++
+Enter the ans: ^c
+^ Which law of thermodynamics states that energy cannot be created or destroyed, 
+only transferred or converted from one form to another?
+A) First Law
+B) Second Law
+C) Third Law
+D) Zeroth Law
+Enter the ans: ^a
+^ In a deck of 52 playing cards, what is the probability of drawing a heart or a king?
+A) 1/4
+B) 7/52
+C) 21/52
+D) 16/52
+Enter the ans: ^d
+$
+13
+^ Which teaching strategy is most effective for catering to different learning styles in a diverse classroom?
+A) Lecture-based instruction with minimal student interaction
+B) Uniform assignments for all students regardless of their learning styles
+C) Incorporating a variety of instructional methods, such as visual aids, group work, and hands-on activities
+D) Strictly adhering to a textbook without deviating from it
+Enter the ans: ^c 
+^ How should a teacher address disruptive behavior in the classroom?
+A) Ignore the behavior and hope it resolves itself
+B) Publicly reprimand the student in front of the class
+C) Immediately send the student out of the classroom
+D) Implement a consistent system of rules and consequences while maintaining a respectful and supportive environment
+Enter the ans: ^d 
+^ What is the primary purpose of formative assessments in the classroom?
+A) To assign final grades to students
+B) To provide feedback to students and adjust instruction to meet their needs
+C) To compare students’ performance against national standards
+D) To determine which students need to be retained in the current grade
+Enter the ans: ^b 
+^ Why is ongoing professional development important for teachers?
+A) To ensure that teachers have the latest knowledge and skills to improve their teaching practices
+B) To fulfill mandatory requirements set by the school district
+C) To increase teachers' salaries
+D) To avoid additional administrative duties
+Enter the ans: ^a 
+^ What is an effective way to engage students in a lesson?
+A) Using a one-size-fits-all approach to instruction
+B) Encouraging active participation through questions, discussions, and interactive activities
+C) Providing lengthy lectures without breaks
+D) Allowing students to choose any topic they want to study
+Enter the ans: ^b 
+$
+
+22
+Rakshit
