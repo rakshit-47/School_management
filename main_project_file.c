@@ -79,7 +79,7 @@ int main()
             printf("To enter data management, enter the password\n");
             printf("Enter: ");
             a = password();
-            printf("%d\n",a);
+
             if(a == 0)
             {
                goto back;
