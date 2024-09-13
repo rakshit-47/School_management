@@ -16,7 +16,7 @@ Returns int: Manages exam timing. Returns 0 to end the exam when time's up, and 
 
 ### Validation Functions
 
-**int valid_address(const char \*address)** 
+**int valid_address(const char \*address)**  
 Returns int: Validates a user-provided address. Returns 0 for invalid input (special characters or numbers) and 1 for valid addresses.
 
 **int valid_pin_code(const char \*pin)** 
