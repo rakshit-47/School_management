@@ -992,7 +992,7 @@ int write_teacher_data(int age, char subject[])
 
 int password()
 {
-   /*This asks the user to enter the password to unlock something is there is no password created the user can make new pass*/
+   /*This asks the user to enter the password to unlock something if there is no password created the user can make new pass*/
    char term;
    PGconn *conn = PQconnectdb(conninfo);
    if (PQstatus(conn) != CONNECTION_OK) 

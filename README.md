@@ -1,55 +1,128 @@
-### School management program
+####This School Management System is a C-based application designed to manage school operations efficiently. It includes functionalities for student and teacher management, exam scheduling, fee handling, and password management.
 
+Database Information
+Database Name: school_data
+Host: localhost
+Port: 5432
+
+
+Function Descriptions
+
+Time Management
 int time_check()
-/*
-It returns boolean number 
-   Used as timer in exam it will close the exam after certein time
-   if time's up it returns 0 and ends the exam
-   and if not it returns 1 it continues the exam till time's up */
+Returns int: Manages exam timing. Returns 0 to end the exam when time's up, and 1 to continue if time is still remaining.
 
+Validation Functions
 
 int valid_address(const char *address)
-/*
-It returns boolean number
-    It checks if the typed address by user is valid address or not
-    if input is special charater or number it returns 0 
-    and if everything is alright it returns 1 */
 
+Returns int: Validates a user-provided address. Returns 0 for invalid input (special characters or numbers) and 1 for valid addresses.
 int valid_pin_code(const char *pin)
-/*
-It returns boolean number
-    It checks if the typed pin code is valid or not 
-    the pincode should be exact 6 numbers and only numbers*/
 
+Returns int: Validates a PIN code. Should be exactly 6 digits.
 int valid_name(const char *name)
-/*
-It returns boolean number
-    This checks if the typed name is valid or not 
-    the name should not contain numbers or special charaters*/
 
+Returns int: Checks if a name is valid. The name should not contain numbers or special characters.
 int is_valid_num(char *num)
-/*
-It returns boolean number
-    This verifies if the number typed has exact 10 numbers and weather it is only number*/
 
+Returns int: Verifies if the number is exactly 10 digits long and contains only digits.
 int valid_religion(char str[])
-/*
-It returns boolean number
-    There are some predefined valid reigions in the program if the user dont enter any of them it will considered as error 
-    both small and capital case is valid*/
 
+Returns int: Checks if the religion entered is among predefined valid options, case insensitive.
 int valid_birth(char birth[])
-/*
-It returns boolean number
-    This checks weather the user typed the birthday in right format   which is DD/MM/YYYY and also it does some error handling like user can't enter 30day on feb month */
+
+Returns int: Validates the date of birth in DD/MM/YYYY format, including error handling for invalid dates like February 30th.
+
+
+Student Management
 
 int student_admission()
-/*
-It returns boolean number
-    This function displays the information of the school and takes some information from user like class and display fees as per as class*/
 
+Returns int: Displays school information, gathers student details, and calculates fees based on the class.
 int exam_student(int class, int fees)
-/*
-It returns boolean number
-    This functions reads questions from file and ask the user to type the answer (NOTE: If the student is below class 5Th he/she don't have to attent exam they can directly enter the data)
-    the student in 5TH or above 5th have to attent exam if they get below 70% they cant take admission*/
+
+Returns int: Administers exams for students in class 5 and above. Students scoring below 70% cannot take admission.
+int write_student_data(int class, int fee)
+
+Returns int: Collects and stores student data with error handling.
+int read_student_data()
+
+Returns int: Reads all student data from the database into dynamic memory.
+int assign_rollno(int choice)
+
+Returns int: Assigns roll numbers to students or teacher codes based on the choice parameter.
+int search_student_data()
+
+Returns int: Searches for student data by roll number, class, first letter of name, or pending fees.
+int edit_student_data()
+
+Returns int: Edits student data and updates the database.
+int remove_student_data()
+
+Returns int: Removes a student from the database.
+int pay_fees()
+
+Returns int: Handles fee payments. Students pay full if fees are 6000 or below; otherwise, they pay half.
+int pay_fees_leaving(int class_no, int roll)
+
+Returns int: Manages fee payment for students leaving the school.
+int manage_student_data()
+
+Returns int: Provides access to search, edit, remove, and fee payment functionalities.
+
+
+Teacher Management
+int teacher_hiring()
+
+Returns int: Administers exams for prospective teachers and calculates their marks.
+int write_teacher_data()
+
+Returns int: Collects and stores teacher data with error handling.
+int read_teacher_data()
+
+Returns int: Reads all teacher data from the database into dynamic memory.
+int search_teacher_data()
+
+Returns int: Searches for teacher data by teacher code.
+int edit_teacher_data()
+
+Returns int: Edits teacher data and updates the database.
+int remove_teacher_data()
+
+Returns int: Removes a teacher from the database.
+int allocating_teacher()
+
+Returns int: Allocates teachers to classes and updates the database.
+char* choose_subject()
+
+Returns char*: Allows teachers to select subjects they wish to teach.
+int vacancy(char sub[])
+
+Returns int: Checks the availability of teachers for a given subject.
+Password Management
+int password()
+
+Returns int: Allows users to enter or create a new password if none exists.
+int change_pass()
+
+Returns int: Changes an existing password and updates it in the database.
+int pass_add()
+
+Returns int: Adds a new password to the system with a maximum of 5 passwords.
+int delete_pass()
+
+Returns int: Deletes a specific password and updates the database.
+int manage_password()
+
+Returns int: Provides functionalities to change, add, or delete passwords.
+
+Memory Management
+int free_data()
+Returns int: Frees dynamically allocated memory to prevent memory leaks.
+Teacher Presence
+int present_teacher(char *name)
+
+Returns int: Manages the presence of teachers, including deallocating removed teachers from their classes.
+int allocting()
+
+Returns int: Manages the allocation status of teachers.
