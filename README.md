@@ -1,18 +1,18 @@
 ## This School Management System
 
-Database Information
+### Database Information
 Database Name: school_data
 Host: localhost
 Port: 5432
 
 
-Function Descriptions
+### Function Descriptions
 
-Time Management
+### Time Management
 int time_check()
 Returns int: Manages exam timing. Returns 0 to end the exam when time's up, and 1 to continue if time is still remaining.
 
-Validation Functions
+### Validation Functions
 
 int valid_address(const char *address)
 
@@ -34,7 +34,7 @@ int valid_birth(char birth[])
 Returns int: Validates the date of birth in DD/MM/YYYY format, including error handling for invalid dates like February 30th.
 
 
-Student Management
+### Student Management
 
 int student_admission()
 
@@ -71,7 +71,7 @@ int manage_student_data()
 Returns int: Provides access to search, edit, remove, and fee payment functionalities.
 
 
-Teacher Management
+### Teacher Management
 int teacher_hiring()
 
 Returns int: Administers exams for prospective teachers and calculates their marks.
@@ -99,7 +99,8 @@ Returns char*: Allows teachers to select subjects they wish to teach.
 int vacancy(char sub[])
 
 Returns int: Checks the availability of teachers for a given subject.
-Password Management
+
+### Password Management
 int password()
 
 Returns int: Allows users to enter or create a new password if none exists.
@@ -116,10 +117,11 @@ int manage_password()
 
 Returns int: Provides functionalities to change, add, or delete passwords.
 
-Memory Management
+### Memory Management
 int free_data()
 Returns int: Frees dynamically allocated memory to prevent memory leaks.
-Teacher Presence
+
+### Teacher Presence
 int present_teacher(char *name)
 
 Returns int: Manages the presence of teachers, including deallocating removed teachers from their classes.
