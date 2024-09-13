@@ -1,4 +1,4 @@
-### This School Management System is a C-based application designed to manage school operations efficiently. It includes functionalities for student and teacher management, exam scheduling, fee handling, and password management.
+## This School Management System
 
 Database Information
 Database Name: school_data
