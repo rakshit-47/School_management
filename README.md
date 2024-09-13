@@ -16,16 +16,16 @@ Returns int: Manages exam timing. Returns 0 to end the exam when time's up, and 
 
 ### Validation Functions
 
-**int valid_address(const char *address)** 
+**int valid_address(const char \*address)** 
 Returns int: Validates a user-provided address. Returns 0 for invalid input (special characters or numbers) and 1 for valid addresses.
 
-**int valid_pin_code(const char *pin)** 
+**int valid_pin_code(const char \*pin)** 
 Returns int: Validates a PIN code. Should be exactly 6 digits.
 
-**int valid_name(const char *name)** 
+**int valid_name(const char \*name)** 
 Returns int: Checks if a name is valid. The name should not contain numbers or special characters.
 
-**int is_valid_num(char *num)** 
+**int is_valid_num(char \*num)** 
 Returns int: Verifies if the number is exactly 10 digits long and contains only digits.
 
 **int valid_religion(char str[])** 
