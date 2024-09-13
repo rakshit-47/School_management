@@ -11,7 +11,7 @@ Port: 5432
 
 ### Time Management
 
-**int time_check()** 
+**int time_check()**  
 Returns int: Manages exam timing. Returns 0 to end the exam when time's up, and 1 to continue if time is still remaining.
 
 ### Validation Functions
