@@ -7,7 +7,7 @@ struct teacher *head_teacher , *temp_teacher;
 int change_student  , change_teacher;
 int main() 
 {
-   
+   new_table_db();
    int a;
    int choice = 1;
    char term;
@@ -77,7 +77,6 @@ int main()
             
             printf("\n-------------------------------------------------\n");
             printf("To enter data management, enter the password\n");
-            printf("Enter: ");
             a = password();
 
             if(a == 0)
