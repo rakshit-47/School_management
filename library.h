@@ -46,6 +46,8 @@ struct student
    struct parents par;
 };
 
+int new_table_db();
+
 int time_check();
 
 int valid_name(const char *name);
