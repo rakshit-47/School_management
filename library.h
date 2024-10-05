@@ -1,3 +1,4 @@
+#include<libpq-fe.h>
 struct parents
 {
    char father_name[20];
@@ -46,7 +47,7 @@ struct student
    struct parents par;
 };
 
-int new_table_db();
+int new_table_db(PGconn *conn);
 
 int time_check();
 
@@ -58,49 +59,49 @@ int valid_address(const char *address);
 
 int valid_pin_code(const char *pin); 
 
-int student_admission();
+int student_admission(PGconn *conn);
 
-int exam_student(int class, int fees);
+int exam_student(int class, int fees,PGconn *conn);
 
-int write_student_data(int class, int fee);
+int write_student_data(int class, int fee,PGconn *conn);
 
-int teacher_hiring();
+int teacher_hiring(PGconn *conn);
 
-int write_teacher_data(int age, char subject[]);
+int write_teacher_data(int age, char subject[],PGconn *conn);
 
-int password();
+int password(PGconn *conn);
 
-int change_pass();
+int change_pass(PGconn *conn);
 
-int read_student_data();
+int read_student_data(PGconn *conn);
 
-int read_teacher_data();
+int read_teacher_data(PGconn *conn);
 
 int assign_rollno(int choice);
 
 int search_student_data();
 
-int edit_student_data();
+int edit_student_data(PGconn *conn);
 
 int search_teacher_data();
 
-int edit_teacher_data();
+int edit_teacher_data(PGconn *conn);
 
-int remove_student_data();
+int remove_student_data(PGconn *conn);
 
-int remove_teacher_data();
+int remove_teacher_data(PGconn *conn);
 
-int allocating_teacher();
+int allocating_teacher(PGconn *conn);
 
 int free_data();
 
-int manage_student_data();
+int manage_student_data(PGconn *conn);
 
-int manage_teacher_data();
+int manage_teacher_data(PGconn *conn);
 
-int pay_fees();
+int pay_fees(PGconn *conn);
 
-int pay_fees_leaving(int class_no , int roll);
+int pay_fees_leaving(int class_no , int roll,PGconn *conn);
 
 int valid_birth(char birth[]);
 
@@ -110,12 +111,15 @@ int present_teacher(char *name);
 
 int allocting();
 
-char* choose_subject();
+char* choose_subject(PGconn *conn);
 
-int vacancy(char sub[]);
+int vacancy(char sub[],PGconn *conn);
 
-int pass_add();
+int pass_add(PGconn *conn);
 
-int delete_pass();
+int delete_pass(PGconn *conn);
 
-int manage_password();
+int manage_password(PGconn *conn);
+
+int log_file(char error[]);
+

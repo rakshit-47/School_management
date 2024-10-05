@@ -1,13 +1,20 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include "library.h"
+#include<libpq-fe.h>
 struct student *head_student  , *temp_student;
 struct teacher *head_teacher , *temp_teacher;
-
+const char *conninfo = "dbname=school_data user=postgres password=docketrun host=localhost port=5432";
 int change_student  , change_teacher;
 int main() 
 {
-   new_table_db();
+   PGconn *conn = PQconnectdb(conninfo);
+   if (PQstatus(conn) != CONNECTION_OK) 
+   {
+      printf("Connection to database failed: %s\n", PQerrorMessage(conn));
+      return 1;
+   }
+   new_table_db(conn);
    int a;
    int choice = 1;
    char term;
@@ -60,10 +67,10 @@ int main()
             switch (sub_choice1) 
             {
                case 1:
-                  student_admission();
+                  student_admission(conn);
                   break;
                case 2:
-                  teacher_hiring();
+                  teacher_hiring(conn);
                   break;
                case 0:
                   printf("Thank you\n");
@@ -76,8 +83,8 @@ int main()
          case 2:
             
             printf("\n-------------------------------------------------\n");
-            printf("To enter data management, enter the password\n");
-            a = password();
+            
+            a = password(conn);
 
             if(a == 0)
             {
@@ -88,7 +95,7 @@ int main()
             if (head_student == 0) 
             {  
                int ab;
-               ab = read_student_data();
+               ab = read_student_data(conn);
                if(ab == 2)
                {
                   goto next;
@@ -103,12 +110,12 @@ int main()
                   head_student = head_student->next;
                   free(temp);
                }
-               read_student_data();
+               read_student_data(conn);
             }
             if (head_teacher == 0) 
             {
                int ab;
-               ab = read_teacher_data();
+               ab = read_teacher_data(conn);
                if(ab == 2)
                {
                   goto next;
@@ -123,7 +130,7 @@ int main()
                   head_teacher = head_teacher->next;
                   free(temp);
                }
-               read_teacher_data();
+               read_teacher_data(conn);
             }
             allocting();
             int choice2 = 1;
@@ -154,14 +161,14 @@ int main()
                switch (sub_choice2) 
                {
                   case 1:
-                     manage_student_data();
+                     manage_student_data(conn);
                      break;
                         
                   case 2:
-                     manage_teacher_data();
+                     manage_teacher_data(conn);
                      break;
                   case 3:
-                     manage_password();
+                     manage_password(conn);
                      break;
                   case 0:
                      printf("Thank you\n");
@@ -176,6 +183,7 @@ int main()
             break;
          case 0:
             printf("Thank you\n");
+            PQfinish(conn);
             free_data();
             exit(0);
          default:
@@ -184,3 +192,4 @@ int main()
       }
    }
 }
+

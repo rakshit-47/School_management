@@ -9,6 +9,12 @@ Port: 5432
 
 ### Function Descriptions
 
+
+### Database function
+
+**int new_table_db(PGconn \*conn)**  
+Returns int: It creates new tables in the database if the tables are not present.
+
 ### Time Management
 
 **int time_check()**  
@@ -129,3 +135,6 @@ Returns int: Manages the presence of teachers, including deallocating removed te
 
 **int allocting()**  
 Returns int: Manages the allocation status of teachers.
+
+**int log_file(char error[])**
+returns int: logs all the error in the file (Note if the log don't exist it creates and once it creates it appentes )

@@ -1,67 +1,126 @@
 #include <stdio.h>
 #include <string.h>
 #include <libpq-fe.h>
-
+#include<ctype.h>
+#include<stdlib.h>
 const char *conninfo = "dbname=school_data user=postgres password=docketrun host=localhost port=5432";
-
+int valid_name(const char *name)
+{
+      /*This checks if the typed name is valid or not 
+   the name should not contain numbers or special charaters*/
+   int len;
+   len = strlen(name);
+   printf("%d\n", len);
+   if(len == 0)
+   {
+      printf("No name entered\n");
+      return 0;
+   }
+   if(isspace(name[0]))
+   {
+      printf("Dont enter space in first\n");
+      return 0;
+   }
+   for (int i = 0; name[i] != '\0'; i++) 
+   {
+      if (!isalpha(name[i]) && !isspace(name[i])) 
+      {
+         printf("Invalid name\n");
+         return 0;
+      }
+   }
+   return 1;
+}
 int password() 
 {
     char term;
-    PGconn *conn = PQconnectdb(conninfo);
-    if (PQstatus(conn) != CONNECTION_OK) 
-    {
-        fprintf(stderr, "Connection to database failed: %s", PQerrorMessage(conn));
-        PQfinish(conn);
-        return 1;
-    }
+   char name[20];
+   char pass[13];
+   char pass2[13];
+   int attempts;
+   PGconn *conn = PQconnectdb(conninfo);
+   if (PQstatus(conn) != CONNECTION_OK) 
+   {
+      fprintf(stderr, "Connection to database failed: %s\n", PQerrorMessage(conn));
+      return 0;
+   }
+   const char *query = "SELECT CASE WHEN EXISTS (SELECT * FROM password LIMIT 1) THEN 1 ELSE 0 END;";
+   PGresult *res_d = PQexec(conn, query);
+   if (PQresultStatus(res_d) != PGRES_TUPLES_OK) 
+   {
+      printf("Error while executing the query: %s\n", PQerrorMessage(conn));
 
-    const char *query = "SELECT * FROM password";
-    PGresult *res = PQexec(conn, query);
-    ExecStatusType resStatus = PQresultStatus(res);
-    if (resStatus != PGRES_TUPLES_OK) 
-    {
-        printf("Error while executing the query: %s\n", PQerrorMessage(conn)); 
-        PQclear(res); 
-        PQfinish(conn);  
-        return 1;
-    }
 
-    char *value = PQgetvalue(res, 0, 0);
-    if (value == NULL) 
-    {
-        char pass[13];
-        while (1) 
-        {
+      return 0;
+   }
+   int exists = atoi(PQgetvalue(res_d, 0, 0));
+   PQclear(res_d);
+   if (exists == 0) 
+   {
+      printf("There is no password existing\nCreate new one\n");
+      while (1) 
+      {
+
+         do 
+         {
+            printf("Enter the name of the user: ");
+            fgets(name, sizeof(name), stdin);
+            name[strcspn(name, "\n")] = '\0';
+         } 
+         while (!valid_name(name));
+         
+         
+         while (1) 
+         {
             printf("Enter a new password (8-12 characters): ");
-            scanf("%12s", pass);
+            scanf("%s", pass);
             int len = strlen(pass);
             if (len >= 8 && len <= 12) 
             {
-                char insert_query[100];
-                snprintf(insert_query, sizeof(insert_query), "INSERT INTO password VALUES('%s')", pass);
-                PGresult *res = PQexec(conn, insert_query);
-                ExecStatusType resStatus = PQresultStatus(res);
-                printf("Query Status: %s\n", PQresStatus(resStatus));             
-                if (resStatus != PGRES_COMMAND_OK) 
-                {
-                    printf("Error while executing the query: %s\n", PQerrorMessage(conn));
-                    PQclear(res);
-                    PQfinish(conn);
-                    return 1;
-                }
-                printf("Password added successfully.\n");
-                PQclear(res);
-                PQfinish(conn);
-                return 0;
+               break;
             } 
             else 
             {
-                printf("The password should be between 8 and 12 characters.\n");
+               printf("The password should be between 8 and 12 characters\n");
             }
-        }
-    } 
+         }
+         int len = strlen(pass);
+         if (len >= 8 && len <= 12) 
+         {
+            char insert_query[100];
+            snprintf(insert_query, sizeof(insert_query), "INSERT INTO password (name, pass) VALUES('%s', '%s')", name, pass);
+            PGresult *insert_res = PQexec(conn, insert_query);
+            if (PQresultStatus(insert_res) != PGRES_COMMAND_OK) 
+            {
+               printf("Error while executing the insert query: %s\n", PQerrorMessage(conn));
+            } 
+            else 
+            {
+               printf("Password added successfully.\n");
+            }
+            PQclear(insert_res);
+            break;
+         } 
+         else 
+         {
+            printf("The password should be between 8 and 12 characters.\n");
+         }
+      }
+   }
     else 
     {
+        const char *query = "SELECT * FROM password";
+        PGresult *res = PQexec(conn, query);
+        ExecStatusType resStatus = PQresultStatus(res);
+        printf("Query Status: %s\n", PQresStatus(resStatus));
+        if (resStatus != PGRES_TUPLES_OK) 
+        {
+            printf("Error while executing the query: %s\n", PQerrorMessage(conn));
+            PQclear(res);
+            PQfinish(conn); 
+            return 1;
+        }
+
         char pass2[13];
         int attempts;
         while (1) 
@@ -96,6 +155,7 @@ int password()
                 }
             }
             printf("Too many incorrect attempts.\n");
+            printf("1 or 0\n");
             int choice;
             while (1) 
             {
@@ -114,6 +174,7 @@ int password()
                     }
                 }
             }
+            
             if (choice == 0) 
             {
                 PQclear(res);
@@ -123,7 +184,7 @@ int password()
         }
     }
 
-    PQclear(res);
+    PQclear(res_d);
     PQfinish(conn);
     return 0;
 }
